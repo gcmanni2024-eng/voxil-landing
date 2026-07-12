@@ -15,6 +15,8 @@
   /* Modul-Akzente — gedeckt, "Kanzlei-Broschüre" statt Tailwind-Standard */
   --blue: #2c5490;
   --blue-soft: rgba(44, 84, 144, 0.1);
+  --petrol: #1f6e73;
+  --petrol-soft: rgba(31, 110, 115, 0.1);
   --green: #2f7a52;
   --green-soft: rgba(47, 122, 82, 0.1);
   --orange: #b8641e;
@@ -43,10 +45,12 @@
     --shadow-card: 0 1px 2px rgba(0, 0, 0, 0.5), 0 14px 30px -20px rgba(0, 0, 0, 0.7);
 
     --blue-soft: rgba(94, 146, 214, 0.16);
+    --petrol-soft: rgba(80, 184, 189, 0.16);
     --green-soft: rgba(90, 189, 138, 0.16);
     --orange-soft: rgba(224, 152, 88, 0.16);
     --purple-soft: rgba(163, 133, 209, 0.16);
     --blue: #6fa1de;
+    --petrol: #50b8bd;
     --green: #5abd8a;
     --orange: #e09858;
     --purple: #a385d1;
@@ -62,10 +66,12 @@
   --shadow-card: 0 1px 2px rgba(0, 0, 0, 0.5), 0 14px 30px -20px rgba(0, 0, 0, 0.7);
 
   --blue-soft: rgba(94, 146, 214, 0.16);
+  --petrol-soft: rgba(80, 184, 189, 0.16);
   --green-soft: rgba(90, 189, 138, 0.16);
   --orange-soft: rgba(224, 152, 88, 0.16);
   --purple-soft: rgba(163, 133, 209, 0.16);
   --blue: #6fa1de;
+  --petrol: #50b8bd;
   --green: #5abd8a;
   --orange: #e09858;
   --purple: #a385d1;
@@ -81,6 +87,8 @@
 
   --blue: #2c5490;
   --blue-soft: rgba(44, 84, 144, 0.1);
+  --petrol: #1f6e73;
+  --petrol-soft: rgba(31, 110, 115, 0.1);
   --green: #2f7a52;
   --green-soft: rgba(47, 122, 82, 0.1);
   --orange: #b8641e;
@@ -164,6 +172,12 @@ button:focus-visible {
   padding-bottom: 16px;
 }
 
+.brand-block {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
 .brand {
   display: flex;
   align-items: center;
@@ -178,6 +192,15 @@ button:focus-visible {
   color: var(--ink-muted);
   font-weight: 400;
   font-style: italic;
+}
+
+.brand-tagline {
+  margin: 0;
+  padding-left: 40px;
+  font-size: 0.7rem;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  color: var(--ink-muted);
 }
 
 .brand-mark {
@@ -325,8 +348,8 @@ button:focus-visible {
 
 .module-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 18px;
 }
 
 .module-card {
@@ -414,6 +437,11 @@ button:focus-visible {
 .module-blue .module-audience { color: var(--blue); }
 .module-blue .module-badge { background: var(--blue); }
 
+.module-petrol { border-top-color: var(--petrol); }
+.module-petrol .module-icon { background: var(--petrol-soft); color: var(--petrol); }
+.module-petrol .module-audience { color: var(--petrol); }
+.module-petrol .module-badge { background: var(--petrol); }
+
 .module-green { border-top-color: var(--green); }
 .module-green .module-icon { background: var(--green-soft); color: var(--green); }
 .module-green .module-audience { color: var(--green); }
@@ -474,6 +502,7 @@ button:focus-visible {
 }
 
 .audience-blue { color: var(--blue); background: var(--blue-soft); border-color: var(--blue); }
+.audience-petrol { color: var(--petrol); background: var(--petrol-soft); border-color: var(--petrol); }
 .audience-green { color: var(--green); background: var(--green-soft); border-color: var(--green); }
 .audience-orange { color: var(--orange); background: var(--orange-soft); border-color: var(--orange); }
 .audience-purple { color: var(--purple); background: var(--purple-soft); border-color: var(--purple); }
@@ -493,6 +522,12 @@ button:focus-visible {
   gap: 14px;
 }
 
+.footer-brand-block {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
 .footer-brand {
   font-family: var(--font-display);
   font-weight: 600;
@@ -502,6 +537,14 @@ button:focus-visible {
   color: var(--ink-muted);
   font-weight: 400;
   font-style: italic;
+}
+
+.footer-tagline {
+  margin: 0;
+  font-size: 0.72rem;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  color: var(--ink-muted);
 }
 
 .footer-links {
@@ -653,7 +696,13 @@ button:focus-visible {
 
 /* ---------- Responsive ---------- */
 
-@media (max-width: 980px) {
+@media (max-width: 1180px) {
+  .module-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 760px) {
   .module-grid {
     grid-template-columns: repeat(2, 1fr);
   }
