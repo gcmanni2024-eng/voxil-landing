@@ -23,6 +23,10 @@
   --orange-soft: rgba(184, 100, 30, 0.1);
   --purple: #6a4b96;
   --purple-soft: rgba(106, 75, 150, 0.1);
+  /* Bewusst entsättigt statt eine sechste bunte Akzentfarbe - signalisiert
+     "gemeinsames Fundament unter allen Branchen" statt einer weiteren Vertikale. */
+  --slate: #55606b;
+  --slate-soft: rgba(85, 96, 107, 0.1);
 
   --radius-sm: 6px;
   --radius-md: 12px;
@@ -54,6 +58,8 @@
     --green: #5abd8a;
     --orange: #e09858;
     --purple: #a385d1;
+    --slate-soft: rgba(148, 163, 184, 0.16);
+    --slate: #94a3b8;
   }
 }
 
@@ -75,6 +81,8 @@
   --green: #5abd8a;
   --orange: #e09858;
   --purple: #a385d1;
+  --slate-soft: rgba(148, 163, 184, 0.16);
+  --slate: #94a3b8;
 }
 
 :root[data-theme="light"] {
@@ -95,6 +103,8 @@
   --orange-soft: rgba(184, 100, 30, 0.1);
   --purple: #6a4b96;
   --purple-soft: rgba(106, 75, 150, 0.1);
+  --slate: #55606b;
+  --slate-soft: rgba(85, 96, 107, 0.1);
 }
 
 * {
@@ -331,6 +341,13 @@ button:focus-visible {
   border-top: 1px solid var(--border);
 }
 
+/* Zweite Modul-Sektion (gemeinsame Infrastruktur): dezente Anhebung statt
+   Akzentfarbe, damit sie sich klar von der bunten Branchen-Sektion darüber
+   absetzt, ohne eine fünfte Farbe einzuführen. */
+.modules-infra {
+  background: var(--paper-elevated);
+}
+
 .section-title {
   margin: 0 0 10px;
   text-align: center;
@@ -405,21 +422,23 @@ button:focus-visible {
 .module-badge {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  padding: 7px 14px;
+  gap: 6px;
+  padding: 6px 12px;
   border-radius: var(--radius-full);
-  font-size: 0.86rem;
+  font-size: 0.8rem;
   font-weight: 700;
   color: #fdfcf8;
+  white-space: nowrap;
 }
 
 .status-pill {
-  padding: 2px 9px;
+  padding: 2px 8px;
   border-radius: var(--radius-full);
-  font-size: 0.66rem;
+  font-size: 0.62rem;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.03em;
+  white-space: nowrap;
   background: rgba(255, 255, 255, 0.24);
   color: #fdfcf8;
 }
@@ -430,12 +449,49 @@ button:focus-visible {
   font-size: 0.93rem;
 }
 
+/* Nur auf der Legal-Karte genutzt (unser Fokus-Projekt) - Farbe kommt aus
+   dem jeweiligen .module-{farbe}-Block weiter unten, damit sie exakt zum
+   Kartenakzent passt statt eine eigene Farbe zu erfinden. */
+.module-focus-note {
+  margin: -10px 0 0;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+/* Fixer Hinweis auf jeder Karte statt nur im Fließtext - macht die
+   Offline-First-Architektur als durchgängiges Differenzierungsmerkmal
+   sichtbar, nicht nur als Prosa-Nebensatz. margin-top: auto schiebt ihn an
+   den unteren Kartenrand, damit unterschiedlich lange module-desc-Texte
+   nicht zu einer wackeligen Baseline über die Grid-Reihe führen. */
+.module-offline-tag {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  width: 100%;
+  margin-top: auto;
+  padding-top: 14px;
+  border-top: 1px dashed var(--border);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+}
+
+.module-offline-tag svg {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+}
+
 /* Akzentfarben je Spalte */
 
 .module-blue { border-top-color: var(--blue); }
 .module-blue .module-icon { background: var(--blue-soft); color: var(--blue); }
 .module-blue .module-audience { color: var(--blue); }
 .module-blue .module-badge { background: var(--blue); }
+.module-blue .module-focus-note { color: var(--blue); }
 
 .module-petrol { border-top-color: var(--petrol); }
 .module-petrol .module-icon { background: var(--petrol-soft); color: var(--petrol); }
@@ -456,6 +512,14 @@ button:focus-visible {
 .module-purple .module-icon { background: var(--purple-soft); color: var(--purple); }
 .module-purple .module-audience { color: var(--purple); }
 .module-purple .module-badge { background: var(--purple); }
+
+/* Infrastruktur-Karten teilen sich bewusst EINE neutrale, unaufgeregte
+   Akzentfarbe (statt je einer eigenen) - visuelles Signal, dass sie das
+   gemeinsame Fundament unter allen vier bunten Branchen-Modulen sind. */
+.module-neutral { border-top-color: var(--slate); }
+.module-neutral .module-icon { background: var(--slate-soft); color: var(--slate); }
+.module-neutral .module-audience { color: var(--slate); }
+.module-neutral .module-badge { background: var(--slate); }
 
 /* ---------- Contact CTA ---------- */
 
