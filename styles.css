@@ -739,25 +739,6 @@ button:focus-visible {
   font-size: 0.86rem;
 }
 
-.modal-list {
-  margin: 22px 0 0;
-  padding-left: 1.2em;
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-}
-
-.modal-list li {
-  color: var(--ink-muted);
-  font-size: 0.94rem;
-  line-height: 1.6;
-}
-
-.modal-list strong {
-  color: var(--ink);
-  font-weight: 700;
-}
-
 /* ---------- Responsive ---------- */
 
 @media (max-width: 1180px) {
