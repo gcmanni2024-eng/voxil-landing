@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8" />
+<title>VOXIL Partner-Factsheet (Entwurf)</title>
+<style>
+  :root {
+    --ink: #1c2430;
+    --ink-muted: #55606b;
+    --border: #d8d2c0;
+    --paper: #f7f4ec;
+    --paper-elevated: #fffdf7;
+    --blue: #2c5490;
+    --blue-soft: rgba(44, 84, 144, 0.08);
+    --petrol: #1f6e73;
+    --petrol-soft: rgba(31, 110, 115, 0.08);
+    --slate: #55606b;
+    --slate-soft: rgba(85, 96, 107, 0.08);
+    --green: #2f7a52;
+    --font-display: "Iowan Old Style", "Palatino Linotype", "Source Serif 4", Georgia, serif;
+    --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    padding: 42px 48px;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--font-sans);
+    font-size: 13px;
+    line-height: 1.5;
+  }
+  .draft-tag {
+    display: inline-block;
+    margin-bottom: 14px;
+    padding: 3px 10px;
+    border-radius: 999px;
+    background: #fde9d0;
+    color: #8a4b0f;
+    font-size: 9.5px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 16px;
+    border-bottom: 2px solid var(--ink);
+    margin-bottom: 22px;
+  }
+  .brand {
+    font-family: var(--font-display);
+    font-size: 20px;
+    font-weight: 600;
+  }
+  .brand span { color: var(--ink-muted); font-style: italic; font-weight: 400; }
+  .brand-sub {
+    margin-top: 2px;
+    font-size: 11px;
+    color: var(--ink-muted);
+    letter-spacing: 0.03em;
+  }
+  h1 {
+    font-family: var(--font-display);
+    font-size: 19px;
+    font-weight: 600;
+    margin: 0 0 8px;
+  }
+  .lede {
+    margin: 0 0 22px;
+    color: var(--ink-muted);
+    max-width: 640px;
+  }
+  h2 {
+    font-size: 12.5px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--ink-muted);
+    margin: 0 0 10px;
+    padding-top: 4px;
+  }
+  .hw-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-bottom: 22px;
+  }
+  .hw-box {
+    border: 1px solid var(--border);
+    border-top: 3px solid var(--slate);
+    border-radius: 8px;
+    padding: 12px 14px;
+    background: var(--paper-elevated);
+  }
+  .hw-box.pro { border-top-color: var(--blue); }
+  .hw-box.advanced { border-top-color: var(--petrol); }
+  .hw-box .tier { font-weight: 700; font-size: 13.5px; margin-bottom: 2px; }
+  .hw-box.pro .tier { color: var(--blue); }
+  .hw-box.advanced .tier { color: var(--petrol); }
+  .hw-box .ram { font-size: 10.5px; color: var(--ink-muted); margin-bottom: 8px; }
+  .hw-box ul { margin: 0; padding-left: 15px; }
+  .hw-box li { margin-bottom: 3px; font-size: 11px; }
+
+  .two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin-bottom: 22px;
+  }
+  .role-list, .compliance-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  .role-list li, .compliance-list li {
+    padding: 7px 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 11.5px;
+  }
+  .role-list li:last-child, .compliance-list li:last-child { border-bottom: none; }
+  .role-list li strong, .compliance-list li strong { display: block; margin-bottom: 2px; }
+
+  footer {
+    margin-top: 26px;
+    padding-top: 14px;
+    border-top: 1px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+    font-size: 10.5px;
+    color: var(--ink-muted);
+  }
+</style>
+</head>
+<body>
+
+  <span class="draft-tag">Vorabversion — Entwurf</span>
+
+  <header>
+    <div>
+      <div class="brand">VOXIL <span>Suite</span></div>
+      <div class="brand-sub">Partnerprogramm für IT-Systemhäuser &amp; Reseller</div>
+    </div>
+    <div class="brand-sub">voxil-suite.de/partner</div>
+  </header>
+
+  <h1>VOXIL Legal als zusätzliches, wiederkehrendes Servicegeschäft.</h1>
+  <p class="lede">
+    VOXIL Legal ist eine 100% On-Premise-KI-Lösung für Anwälte, Notare und Insolvenzverwalter –
+    ohne Cloud, ohne externe APIs. Für Systemhäuser bedeutet das: eine jährlich wiederkehrende
+    Lizenz plus passendes Hardware-Upselling, bei voller Kundenhoheit auf Ihrer Seite.
+  </p>
+
+  <h2>Hardware-Klassen</h2>
+  <div class="hw-row">
+    <div class="hw-box lite">
+      <div class="tier">Lite</div>
+      <div class="ram">≤ 8 GB RAM</div>
+      <ul>
+        <li>Lokales Diktat &amp; Transkription</li>
+        <li>PDF-Viewer &amp; Aktenverwaltung</li>
+        <li>Fakten-Extraktion je Dokument</li>
+      </ul>
+    </div>
+    <div class="hw-box pro">
+      <div class="tier">Pro</div>
+      <div class="ram">≤ 16 GB RAM</div>
+      <ul>
+        <li>Alles aus Lite</li>
+        <li>Meta-Ebene-Assistent (akteübergreifend)</li>
+        <li>Mehr parallele Verarbeitung</li>
+      </ul>
+    </div>
+    <div class="hw-box advanced">
+      <div class="tier">Advanced</div>
+      <div class="ram">&gt; 16 GB RAM</div>
+      <ul>
+        <li>Alles aus Pro</li>
+        <li>Deep-Reading-Modus (ganze Akte)</li>
+        <li>Größerer KI-Kontextspielraum</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="two-col">
+    <div>
+      <h2>Rollenverteilung</h2>
+      <ul class="role-list">
+        <li><strong>Volle Kundenhoheit bei Ihnen</strong>Erstgespräch, Support, Wartung, Verlängerung.</li>
+        <li><strong>VOXIL liefert nur die Lizenz</strong>Kein Direktvertrieb, kein Parallelkanal.</li>
+        <li><strong>Freie Kalkulation</strong>Partner-Konditionen, Endkundenpreis liegt bei Ihnen.</li>
+      </ul>
+    </div>
+    <div>
+      <h2>Compliance</h2>
+      <ul class="compliance-list">
+        <li><strong>§ 203 StGB</strong>Keine Cloud-Verarbeitung mandatsbezogener Daten.</li>
+        <li><strong>DSGVO</strong>Keine Auftragsverarbeitung durch Dritte.</li>
+        <li><strong>100% Offline / 0 Bytes Cloud-Abfluss</strong>Kein Cloud-Haftungsrisiko fürs Systemhaus.</li>
+      </ul>
+    </div>
+  </div>
+
+  <footer>
+    <span>VOXIL Suite — Partnerprogramm für IT-Systemhäuser &amp; Reseller</span>
+    <span>Platzhalter-Factsheet · finales Layout folgt</span>
+  </footer>
+
+</body>
+</html>

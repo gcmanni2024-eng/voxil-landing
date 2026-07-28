@@ -1,0 +1,107 @@
+<svg viewBox="0 0 960 460" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="arch-diagram-title arch-diagram-desc" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif">
+  <title id="arch-diagram-title">Architekturvergleich: VOXIL Legal (Vor-Ort) vs. typische Cloud-KI-Lösung</title>
+  <desc id="arch-diagram-desc">Links: Kanzlei-PC, lokale KI und lokale Datenbank bleiben innerhalb der Kanzlei-Netzwerkgrenze, keine Daten verlassen das Netzwerk. Rechts: Bei einer typischen Cloud-KI-Lösung verlassen Mandantendaten über das Internet die Kanzlei und werden auf einem externen Server verarbeitet.</desc>
+
+  <!-- ============ LINKS: VOXIL Vor-Ort ============ -->
+  <g>
+    <text x="240" y="34" text-anchor="middle" font-size="19" font-weight="700" fill="#eee9dc">VOXIL Legal — Vor-Ort-Verarbeitung</text>
+
+    <!-- Kanzlei-Netzwerk-Grenze -->
+    <rect x="40" y="58" width="400" height="330" rx="14" fill="none" stroke="#5abd8a" stroke-width="2" stroke-dasharray="6 6"/>
+    <text x="240" y="84" text-anchor="middle" font-size="12.5" font-weight="700" letter-spacing="0.04em" fill="#5abd8a">KANZLEI-NETZWERK / FIREWALL</text>
+
+    <!-- Kanzlei-PC -->
+    <g>
+      <rect x="90" y="110" width="150" height="70" rx="10" fill="#1a1f2a" stroke="#2b3140" stroke-width="1.5"/>
+      <text x="165" y="140" text-anchor="middle" font-size="13" font-weight="700" fill="#eee9dc">Kanzlei-Arbeitsplatz</text>
+      <text x="165" y="158" text-anchor="middle" font-size="11" fill="#99a0ae">PDF, Diktat, Akte</text>
+    </g>
+
+    <!-- Lokale KI -->
+    <g>
+      <rect x="250" y="110" width="150" height="70" rx="10" fill="#1a1f2a" stroke="#6fa1de" stroke-width="1.5"/>
+      <text x="325" y="136" text-anchor="middle" font-size="13" font-weight="700" fill="#eee9dc">Lokale KI</text>
+      <text x="325" y="153" text-anchor="middle" font-size="11" fill="#99a0ae">Ollama · whisper.cpp</text>
+      <text x="325" y="168" text-anchor="middle" font-size="11" fill="#99a0ae">läuft auf dieser Hardware</text>
+    </g>
+
+    <!-- Pfeil PC -> KI -->
+    <path d="M240 145 L250 145" stroke="#99a0ae" stroke-width="1.6" marker-end="url(#arrow-neutral)"/>
+
+    <!-- Pfeil KI -> DB -->
+    <path d="M325 180 L325 210" stroke="#99a0ae" stroke-width="1.6" marker-end="url(#arrow-neutral)"/>
+
+    <!-- Lokale DB -->
+    <g>
+      <rect x="170" y="210" width="150" height="70" rx="10" fill="#1a1f2a" stroke="#2b3140" stroke-width="1.5"/>
+      <text x="245" y="240" text-anchor="middle" font-size="13" font-weight="700" fill="#eee9dc">Lokale Datenbank</text>
+      <text x="245" y="258" text-anchor="middle" font-size="11" fill="#99a0ae">SQLite, verschlüsselt</text>
+    </g>
+
+    <!-- Ergebnis-Zeile -->
+    <g>
+      <circle cx="105" cy="335" r="9" fill="none" stroke="#5abd8a" stroke-width="1.8"/>
+      <path d="M100 335l4 4 8-8" stroke="#5abd8a" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+      <text x="122" y="340" font-size="13" font-weight="700" fill="#5abd8a">0 Bytes verlassen das Netzwerk</text>
+    </g>
+  </g>
+
+  <!-- ============ Trennlinie / VS ============ -->
+  <line x1="480" y1="70" x2="480" y2="400" stroke="#2b3140" stroke-width="1.5"/>
+  <circle cx="480" cy="235" r="19" fill="#12161e" stroke="#2b3140" stroke-width="1.5"/>
+  <text x="480" y="240" text-anchor="middle" font-size="12" font-weight="700" fill="#99a0ae">VS</text>
+
+  <!-- ============ RECHTS: Typische Cloud-KI ============ -->
+  <g>
+    <text x="720" y="34" text-anchor="middle" font-size="19" font-weight="700" fill="#eee9dc">Typische Cloud-KI-Lösung</text>
+
+    <!-- Kanzlei-Netzwerk-Grenze (rechts, offen zum Internet) -->
+    <rect x="520" y="58" width="180" height="150" rx="14" fill="none" stroke="#e09858" stroke-width="2" stroke-dasharray="6 6"/>
+    <text x="610" y="84" text-anchor="middle" font-size="12.5" font-weight="700" letter-spacing="0.04em" fill="#e09858">KANZLEI-NETZWERK</text>
+
+    <!-- Kanzlei-PC rechts -->
+    <g>
+      <rect x="545" y="110" width="130" height="70" rx="10" fill="#1a1f2a" stroke="#2b3140" stroke-width="1.5"/>
+      <text x="610" y="140" text-anchor="middle" font-size="13" font-weight="700" fill="#eee9dc">Kanzlei-Arbeitsplatz</text>
+      <text x="610" y="158" text-anchor="middle" font-size="11" fill="#99a0ae">PDF, Diktat, Akte</text>
+    </g>
+
+    <!-- Pfeil über die Grenze hinweg, Richtung Internet -->
+    <path d="M700 145 L760 145" stroke="#e09858" stroke-width="2" marker-end="url(#arrow-warning)"/>
+    <text x="730" y="130" text-anchor="middle" font-size="10.5" font-weight="700" fill="#e09858">Upload</text>
+
+    <!-- Internet -->
+    <g>
+      <ellipse cx="820" cy="145" rx="55" ry="36" fill="#1a1f2a" stroke="#e09858" stroke-width="1.5"/>
+      <text x="820" y="141" text-anchor="middle" font-size="12" font-weight="700" fill="#eee9dc">Internet</text>
+      <text x="820" y="156" text-anchor="middle" font-size="10.5" fill="#99a0ae">öffentlich</text>
+    </g>
+
+    <!-- Pfeil Internet -> Fremdserver -->
+    <path d="M820 181 L820 220" stroke="#e09858" stroke-width="2" marker-end="url(#arrow-warning)"/>
+
+    <!-- Externer Server -->
+    <g>
+      <rect x="745" y="220" width="150" height="80" rx="10" fill="#1a1f2a" stroke="#e09858" stroke-width="1.5"/>
+      <text x="820" y="248" text-anchor="middle" font-size="13" font-weight="700" fill="#eee9dc">Externer KI-Server</text>
+      <text x="820" y="265" text-anchor="middle" font-size="11" fill="#99a0ae">außerhalb der Kanzlei,</text>
+      <text x="820" y="280" text-anchor="middle" font-size="11" fill="#99a0ae">außerhalb Ihrer Kontrolle</text>
+    </g>
+
+    <!-- Risiko-Zeile -->
+    <g>
+      <circle cx="545" cy="335" r="9" fill="none" stroke="#e09858" stroke-width="1.8"/>
+      <path d="M545 330v6M545 340v0.5" stroke="#e09858" stroke-width="1.8" stroke-linecap="round"/>
+      <text x="562" y="340" font-size="13" font-weight="700" fill="#e09858">Mandantendaten verlassen die Kanzlei</text>
+    </g>
+  </g>
+
+  <defs>
+    <marker id="arrow-neutral" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+      <path d="M0 0 L8 4 L0 8 z" fill="#99a0ae"/>
+    </marker>
+    <marker id="arrow-warning" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+      <path d="M0 0 L8 4 L0 8 z" fill="#e09858"/>
+    </marker>
+  </defs>
+</svg>

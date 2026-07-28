@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8" />
+<title>VOXIL Plumbing Mockup (Quelle für Screenshot)</title>
+<style>
+  /* Werte 1:1 aus dem bestehenden Dark-Mode-Theme der Hauptseite übernommen
+     (:root[data-theme="dark"] in styles.css), damit der Screenshot exakt
+     zur selben Familie gehört. NUR frei erfundene Platzhalter-Daten. */
+  :root {
+    --paper: #12161e;
+    --paper-elevated: #1a1f2a;
+    --ink: #eee9dc;
+    --ink-muted: #99a0ae;
+    --border: #2b3140;
+    --blue: #6fa1de;
+    --blue-soft: rgba(94, 146, 214, 0.16);
+    --green: #5abd8a;
+    --green-soft: rgba(90, 189, 138, 0.16);
+    --orange: #e09858;
+    --orange-soft: rgba(224, 152, 88, 0.16);
+    --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    --font-display: "Iowan Old Style", "Palatino Linotype", "Source Serif 4", Georgia, serif;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--font-sans);
+  }
+  .frame {
+    width: 1180px;
+    padding: 32px;
+  }
+  .panel {
+    background: var(--paper-elevated);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    overflow: hidden;
+  }
+  .panel-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 22px 26px;
+    border-bottom: 1px solid var(--border);
+  }
+  .panel-title {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-family: var(--font-display);
+    font-size: 1.15rem;
+    font-weight: 600;
+  }
+  .panel-title .dot {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: var(--green);
+    box-shadow: 0 0 0 3px var(--green-soft);
+  }
+  .badge-open {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 7px 14px;
+    border-radius: 999px;
+    background: var(--orange-soft);
+    color: var(--orange);
+    font-size: 0.8rem;
+    font-weight: 700;
+  }
+  .watched-row {
+    display: flex;
+    gap: 8px;
+    padding: 12px 26px;
+    font-size: 0.75rem;
+    color: var(--ink-muted);
+    border-bottom: 1px solid var(--border);
+    background: var(--paper);
+  }
+  .watched-row span.folder {
+    color: var(--ink);
+    font-weight: 600;
+  }
+  .doc-list {
+    display: flex;
+    flex-direction: column;
+  }
+  .doc-row {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 16px 26px;
+    border-bottom: 1px solid var(--border);
+  }
+  .doc-row:last-child { border-bottom: none; }
+  .doc-icon {
+    width: 38px;
+    height: 38px;
+    flex-shrink: 0;
+    border-radius: 9px;
+    background: var(--blue-soft);
+    color: var(--blue);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .doc-main {
+    flex: 1;
+    min-width: 0;
+  }
+  .doc-title {
+    font-size: 0.94rem;
+    font-weight: 600;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .doc-meta {
+    margin-top: 3px;
+    font-size: 0.78rem;
+    color: var(--ink-muted);
+  }
+  .doc-meta .az {
+    color: var(--ink-muted);
+    font-variant-numeric: tabular-nums;
+  }
+  .status-pill {
+    flex-shrink: 0;
+    padding: 5px 12px;
+    border-radius: 999px;
+    font-size: 0.72rem;
+    font-weight: 700;
+    white-space: nowrap;
+  }
+  .status-auto {
+    background: var(--green-soft);
+    color: var(--green);
+  }
+  .status-manual {
+    background: var(--orange-soft);
+    color: var(--orange);
+  }
+  .doc-time {
+    flex-shrink: 0;
+    width: 64px;
+    text-align: right;
+    font-size: 0.74rem;
+    color: var(--ink-muted);
+  }
+</style>
+</head>
+<body>
+  <div class="frame">
+    <div class="panel">
+      <div class="panel-header">
+        <div class="panel-title">
+          <span class="dot" aria-hidden="true"></span>
+          Posteingang
+        </div>
+        <span class="badge-open">2 Zuordnungen offen</span>
+      </div>
+      <div class="watched-row">
+        Überwachter Ordner: <span class="folder">/Kanzlei-Server/Posteingang/Export-RA-Micro</span>
+      </div>
+      <div class="doc-list">
+
+        <div class="doc-row">
+          <div class="doc-icon" aria-hidden="true">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M7 3h7l5 5v13a1 1 0 01-1 1H7a1 1 0 01-1-1V4a1 1 0 011-1z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M14 3v5h5" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+          </div>
+          <div class="doc-main">
+            <div class="doc-title">Mustermann ./. Musterfirma GmbH — Klageschrift.pdf</div>
+            <div class="doc-meta">Zugeordnet zu Akte <span class="az">AZ-2026-0001-M</span> · Rechtsgebiet: Zivilrecht</div>
+          </div>
+          <span class="status-pill status-auto">Automatisch zugeordnet</span>
+          <div class="doc-time">vor 2 Min.</div>
+        </div>
+
+        <div class="doc-row">
+          <div class="doc-icon" aria-hidden="true">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M7 3h7l5 5v13a1 1 0 01-1 1H7a1 1 0 01-1-1V4a1 1 0 011-1z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M14 3v5h5" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+          </div>
+          <div class="doc-main">
+            <div class="doc-title">Schmidt ./. Bauunternehmen Nordlicht GmbH — Mahnbescheid.pdf</div>
+            <div class="doc-meta">Zugeordnet zu Akte <span class="az">AZ-2026-0002-M</span> · Rechtsgebiet: Bauvertragsrecht</div>
+          </div>
+          <span class="status-pill status-auto">Automatisch zugeordnet</span>
+          <div class="doc-time">vor 11 Min.</div>
+        </div>
+
+        <div class="doc-row">
+          <div class="doc-icon" aria-hidden="true">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M7 3h7l5 5v13a1 1 0 01-1 1H7a1 1 0 01-1-1V4a1 1 0 011-1z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M14 3v5h5" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+          </div>
+          <div class="doc-main">
+            <div class="doc-title">Kettler Immobilien e.K. — Schreiben Gegenseite.pdf</div>
+            <div class="doc-meta">Kein Aktenzeichen im Dokument erkannt</div>
+          </div>
+          <span class="status-pill status-manual">Manuelle Zuordnung nötig</span>
+          <div class="doc-time">vor 24 Min.</div>
+        </div>
+
+        <div class="doc-row">
+          <div class="doc-icon" aria-hidden="true">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M7 3h7l5 5v13a1 1 0 01-1 1H7a1 1 0 01-1-1V4a1 1 0 011-1z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M14 3v5h5" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+          </div>
+          <div class="doc-main">
+            <div class="doc-title">Vogel ./. Vogel — Scheidungsfolgenvereinbarung_Entwurf.pdf</div>
+            <div class="doc-meta">Zugeordnet zu Akte <span class="az">AZ-2026-0004-M</span> · Rechtsgebiet: Familienrecht</div>
+          </div>
+          <span class="status-pill status-auto">Automatisch zugeordnet</span>
+          <div class="doc-time">vor 41 Min.</div>
+        </div>
+
+        <div class="doc-row">
+          <div class="doc-icon" aria-hidden="true">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M7 3h7l5 5v13a1 1 0 01-1 1H7a1 1 0 01-1-1V4a1 1 0 011-1z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M14 3v5h5" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+          </div>
+          <div class="doc-main">
+            <div class="doc-title">Weber Spedition GmbH — Rechnung_Nachtrag.pdf</div>
+            <div class="doc-meta">Kein Aktenzeichen im Dokument erkannt</div>
+          </div>
+          <span class="status-pill status-manual">Manuelle Zuordnung nötig</span>
+          <div class="doc-time">vor 1 Std.</div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</body>
+</html>
